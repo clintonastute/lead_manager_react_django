@@ -1,6 +1,8 @@
 from django.contrib import admin
-from django.urls import path, include 
+from django.urls import path, include
 
 urlpatterns = [
-    path('', include('leads.urls')),
+    # make sure the frontend loads before leads
+    path('', include('frontend.urls')),
+    path('', include('leads.urls'))
 ]
